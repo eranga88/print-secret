@@ -27,5 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{secrets.MY_SECRET}} | base64 --decode
+        run: |
+          touch text.txt
+          echo ${{secrets.MY_SECRET}} | base64 --decode >> text.txt
+          cat text.txt
 
