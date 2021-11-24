@@ -30,7 +30,9 @@ jobs:
         run: |
           touch encoded.txt
           touch decoded.txt
-          cat ${{secrets.MY_SECRET}} > encoded.txt
+          echo "$ENCODED" > encoded.txt
           cat encoded.txt
+        env:
+          ENCODED: ${{secrets.MY_SECRET}}
           
         
