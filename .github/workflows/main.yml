@@ -30,6 +30,5 @@ jobs:
         run: |
           touch encoded.txt
           touch decoded.txt
-          base64 -d ${{secrets.MY_SECRET}} >> decoded.txt
-          cat decoded.txt
-
+          echo -n ${{secrets.MY_SECRET}} | base64 --decode
+        
