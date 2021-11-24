@@ -31,7 +31,8 @@ jobs:
           touch encoded.txt
           touch decoded.txt
           echo "$ENCODED" > encoded.txt
-          cat encoded.txt
+          base64 --decode encoded.txt >> decoded.txt
+          cat decoded.txt
         env:
           ENCODED: ${{secrets.MY_SECRET}}
           
